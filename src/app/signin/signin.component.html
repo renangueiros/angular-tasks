@@ -1,3 +1,6 @@
-<p>
-  signin works!
-</p>
+<form #signinForm="ngForm" (ngSubmit)="signin()" novalidate>
+  <input type="email" placeholder="Email" [(ngModel)]="user.email" name="user.email">
+  <input type="password" placeholder="Senha" [(ngModel)]="user.password" name="user.password">
+  <button type="submit">Entrar</button>
+</form>
+<a routerLink="/signup">Criar uma nova conta</a>
