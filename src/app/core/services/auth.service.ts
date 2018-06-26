@@ -34,4 +34,8 @@ export class AuthService {
     return this.fireAuth.auth.signOut();
   }
 
+  sendResetPasswordEmail(user: User): Promise<void> {
+    return this.fireAuth.auth.sendPasswordResetEmail(user.email);
+  }
+
 }
