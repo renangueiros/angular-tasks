@@ -8,6 +8,7 @@ const routes: Routes = [
     { path: 'tasks', component: null, canActivate: [AuthGuard] },
     { path: 'signin', component: null, canActivate: [UnauthGuard] },
     { path: 'signup', component: null, canActivate: [UnauthGuard] },
+    { path: '', redirectTo: 'tasks', pathMatch: 'full' }
 ];
 
 @NgModule({
