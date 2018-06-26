@@ -1,3 +1,5 @@
-<p>
-  tasks-create works!
-</p>
+<form #taskForm="ngForm" (ngSubmit)="saveTask()" novalidate>
+  <input type="text" placeholder="Nova Tarefa" required [(ngModel)]="task.title" name="title">
+  <button type="button" (click)="cancel()">Cancelar</button>
+  <button type="submit" [disabled]="!taskForm.valid">Salvar</button>
+</form>
