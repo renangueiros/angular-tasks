@@ -1,0 +1,23 @@
+.others {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.others::before, .others::after {
+    content: "";
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.others::before {
+    margin-right: 8px;
+}
+
+.others::after {
+    margin-left: 8px;
+}
+
+.signup-button {
+    display: block;
+}
