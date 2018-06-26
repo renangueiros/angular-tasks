@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Observable } from 'rxjs';
+
+import { TasksService } from '../core/services/tasks.service';
+import { ITask } from '../core/models/i-task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -7,9 +13,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
+  tasks: Observable<ITask[]>;
+
+  constructor(
+    private tasksService: TasksService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    this.tasks = this.tasksService.tasks;
+  }
+
+  navToCreateTask(): void {
+    this.router.navigate(['/tasks/create']);
   }
 
 }
