@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { TasksCreateComponent } from './tasks-create/tasks-create.component';
+import { TaskCreateComponent } from './task-create/task-create.component';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TasksCreateComponent } from './tasks-create/tasks-create.component';
     TasksComponent,
     SigninComponent,
     SignupComponent,
-    TasksCreateComponent
+    TaskCreateComponent,
+    TaskDetailComponent
   ],
   imports: [
     BrowserModule,

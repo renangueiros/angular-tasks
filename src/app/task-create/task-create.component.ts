@@ -5,11 +5,11 @@ import { TasksService } from '../core/services/tasks.service';
 import { Task } from '../core/models/task.model';
 
 @Component({
-  selector: 'app-tasks-create',
-  templateUrl: './tasks-create.component.html',
-  styleUrls: ['./tasks-create.component.css']
+  selector: 'app-task-create',
+  templateUrl: './task-create.component.html',
+  styleUrls: ['./task-create.component.css']
 })
-export class TasksCreateComponent {
+export class TaskCreateComponent {
 
   task: Task = { title: '' };
 
