@@ -11,6 +11,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { TaskCreateComponent } from './task-create/task-create.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
+import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TaskDetailComponent } from './task-detail/task-detail.component';
     SigninComponent,
     SignupComponent,
     TaskCreateComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    RecoverPasswordComponent
   ],
   imports: [
     BrowserModule,
