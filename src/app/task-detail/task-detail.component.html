@@ -1,3 +1,6 @@
-<p>
-  task-detail works!
-</p>
+<form #taskForm="ngForm" (ngSubmit)="updateTask()" novalidate>
+  <input type="text" [(ngModel)]="task.title" name="title">
+  <textarea [(ngModel)]="task.description" name="description"></textarea>
+  <button type="button" (click)="back()">Voltar</button>
+  <button type="submit" (click)="updateTask()">Salvar</button>
+</form>
