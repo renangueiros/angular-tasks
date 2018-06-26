@@ -3,6 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatIconModule,
+  MatTooltipModule,
+  MatListModule,
+  MatDividerModule
+} from '@angular/material';
+
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 
@@ -31,7 +40,13 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    CoreModule
+    CoreModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

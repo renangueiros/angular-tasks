@@ -1,8 +1,21 @@
-<button (click)="signout()">Sair</button>
-<button (click)="navToCreateTask()">Adicionar nova Tarefa</button>
-<ul>
-  <li *ngFor="let task of tasks | async">
-    <button (click)="navToDetailsTask(task)" >{{ task.title }}</button>
-    <button (click)="deleteTask(task)">Apagar</button>
-  </li>
-</ul>
+<mat-toolbar class="mat-elevation-z4" color="primary">
+  <mat-toolbar-row class="wrapper">
+    <span>Tarefas</span>
+    <span class="spacer"></span>
+    <button mat-button mat-icon-button matTooltip="Sair" (click)="signout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="wrapper main">
+  <mat-nav-list class="mat-elevation-z2">
+    <mat-list-item *ngFor="let task of tasks | async">
+      <a matLine (click)="navToDetailsTask(task)">{{ task.title }}</a>
+      <button mat-button mat-icon-button color="primary" matTooltip="Apagar" (click)="deleteTask(task)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-nav-list>
+  <button class="add-task-button" mat-button mat-raised-button color="primary" (click)="navToCreateTask()">Adicionar nova Tarefa</button>
+</div>
