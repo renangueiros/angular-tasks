@@ -38,4 +38,8 @@ export class AuthService {
     return this.fireAuth.auth.sendPasswordResetEmail(user.email);
   }
 
+  createNewPassword(code: string, user: User): Promise<void> {
+    return this.fireAuth.auth.confirmPasswordReset(code, user.password);
+  }
+
 }
