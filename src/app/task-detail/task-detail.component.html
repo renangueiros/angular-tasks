@@ -1,6 +1,19 @@
-<form #taskForm="ngForm" (ngSubmit)="updateTask()" novalidate>
-  <input type="text" [(ngModel)]="task.title" name="title">
-  <textarea [(ngModel)]="task.description" name="description"></textarea>
-  <button type="button" (click)="back()">Voltar</button>
-  <button type="submit" (click)="updateTask()">Salvar</button>
-</form>
+<mat-toolbar class="mat-elevation-z4" color="primary">
+  <mat-toolbar-row class="wrapper">
+    <span>Detalhes da Tarefa</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="wrapper main">
+  <form class="mat-elevation-z2" #taskForm="ngForm" (ngSubmit)="updateTask()" novalidate>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Tarefa" [(ngModel)]="task.title" name="title">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="task.description" placeholder="Descrição" name="description"></textarea>
+    </mat-form-field>
+    <div class="form-footer">
+      <button mat-button mat-raised-button type="button" (click)="back()">Voltar</button>
+      <button mat-button mat-raised-button color="primary" type="submit" (click)="updateTask()">Salvar</button>
+    </div>
+  </form>
+</div>
