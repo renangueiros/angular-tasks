@@ -1,5 +1,16 @@
-<form #signupForm="ngForm" (ngSubmit)="signup()" novalidate>
-  <input type="email" placeholder="Email" [(ngModel)]="user.email" name="user.email">
-  <input type="password" placeholder="Senha" [(ngModel)]="user.password" name="user.password">
-  <button type="submit">Criar conta</button>
-</form>
+<mat-toolbar class="mat-elevation-z4" color="primary">
+  <mat-toolbar-row class="wrapper">
+    <span>Criar conta</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="wrapper main">
+  <form class="mat-elevation-z2" #signupForm="ngForm" (ngSubmit)="signup()" novalidate>
+    <mat-form-field>
+      <input matInput type="email" placeholder="Email" [(ngModel)]="user.email" name="user.email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Senha" [(ngModel)]="user.password" name="user.password">
+    </mat-form-field>
+    <button mat-button mat-raised-button color="primary" type="submit">Criar conta</button>
+  </form>
+</div>
