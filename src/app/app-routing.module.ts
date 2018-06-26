@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { TaskCreateComponent } from './task-create/task-create.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
     { path: 'tasks', component: TasksComponent, canActivate: [AuthGuard] },
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'signin', component: SigninComponent, canActivate: [UnauthGuard] },
     { path: 'signup', component: SignupComponent, canActivate: [UnauthGuard] },
     { path: 'recover-password', component: RecoverPasswordComponent, canActivate: [UnauthGuard] },
+    { path: 'reset-password', component: ResetPasswordComponent, canActivate: [UnauthGuard] },
     { path: '', redirectTo: 'tasks', pathMatch: 'full' }
 ];
 
