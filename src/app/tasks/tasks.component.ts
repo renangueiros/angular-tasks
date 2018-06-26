@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { TasksService } from '../core/services/tasks.service';
+import { AuthService } from '../core/services/auth.service';
 import { ITask } from '../core/models/i-task.model';
 
 @Component({
@@ -17,6 +18,7 @@ export class TasksComponent implements OnInit {
 
   constructor(
     private tasksService: TasksService,
+    public auth: AuthService,
     private router: Router
   ) { }
 
@@ -28,6 +30,10 @@ export class TasksComponent implements OnInit {
     this.tasksService.deleteTask(task);
   }
 
+  signout(): void {
+    this.auth.signout().then(() => { this.navToSignin(); });
+  }
+
   navToCreateTask(): void {
     this.router.navigate(['/tasks/create']);
   }
@@ -35,6 +41,10 @@ export class TasksComponent implements OnInit {
   navToDetailsTask(task: ITask): void {
     this.tasksService.currentTask = task;
     this.router.navigate(['tasks/details']);
+  }
+
+  navToSignin(): void {
+    this.router.navigate(['/signin']);
   }
 
 }
