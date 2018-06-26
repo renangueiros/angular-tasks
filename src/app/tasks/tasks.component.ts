@@ -30,7 +30,7 @@ export class TasksComponent implements OnInit {
 
   navToDetailsTask(task: ITask): void {
     this.tasksService.currentTask = task;
-    this.router.navigate(['/tasks/create']);
+    this.router.navigate(['tasks/details']);
   }
 
 }
