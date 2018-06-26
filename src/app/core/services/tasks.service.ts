@@ -23,14 +23,7 @@ export class TasksService {
   constructor(public auth: AuthService, public fireStore: AngularFirestore) {
     auth.uid.pipe(take(1)).subscribe((uid: string) => {
       this.tasksCollection = fireStore.collection<Task>(uid);
-
-      this.tasks = this.tasksCollection.snapshotChanges().pipe(
-        map(actions => actions.map(a => {
-          const data = a.payload.doc.data() as Task;
-          const id = a.payload.doc.id;
-          return { id, ...data };
-        }))
-      );
+      this.readTasks();
     });
   }
 
@@ -39,13 +32,25 @@ export class TasksService {
     return this.tasksCollection.add(task);
   }
 
-  updateTask(task: ITask): Promise<void> {
-    const updateTask: Task = { title: task.title, description: task.description };
-    return this.tasksCollection.doc<Task>(task.id).update(updateTask);
+  readTasks(): void {
+    this.tasks = this.tasksCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as Task;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
   }
 
-  deleteTask(task: ITask): Promise<void> {
-    return this.tasksCollection.doc<Task>(task.id).delete();
+  async updateTask(task: ITask): Promise<void> {
+    const updateTask: Task = { title: task.title, description: task.description };
+    await this.tasksCollection.doc<Task>(task.id).update(updateTask);
+    this.readTasks();
+  }
+
+  async deleteTask(task: ITask): Promise<void> {
+    await this.tasksCollection.doc<Task>(task.id).delete();
+    this.readTasks();
   }
 
 }
