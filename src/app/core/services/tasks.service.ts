@@ -18,8 +18,9 @@ export class TasksService {
 
   tasksCollection: AngularFirestoreCollection<Task>;
   tasks: Observable<ITask[]>;
+  currentTask: ITask;
 
-  constructor(private auth: AuthService, private fireStore: AngularFirestore) {
+  constructor(public auth: AuthService, public fireStore: AngularFirestore) {
     auth.uid.pipe(take(1)).subscribe((uid: string) => {
       this.tasksCollection = fireStore.collection<Task>(uid);
 

@@ -28,4 +28,9 @@ export class TasksComponent implements OnInit {
     this.router.navigate(['/tasks/create']);
   }
 
+  navToDetailsTask(task: ITask): void {
+    this.tasksService.currentTask = task;
+    this.router.navigate(['/tasks/create']);
+  }
+
 }
