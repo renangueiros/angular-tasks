@@ -1,19 +1,6 @@
-.spacer {
-    flex: 1 1 auto;
-}
-
-.wrapper {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 .add-task-button {
     float: right;
     margin-top: 16px;
-}
-
-.main {
-    padding: 16px;
 }
 
 .mat-nav-list {

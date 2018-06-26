@@ -9,7 +9,8 @@ import {
   MatIconModule,
   MatTooltipModule,
   MatListModule,
-  MatDividerModule
+  MatDividerModule,
+  MatInputModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -46,7 +47,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     MatIconModule,
     MatTooltipModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
