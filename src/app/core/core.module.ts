@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AuthModule } from './auth/auth.module';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { environment } from '../../environments/environment';
 
 @NgModule({
   imports: [
-    CommonModule,
-    AuthModule
-  ],
-  declarations: []
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+  ]
 })
 export class CoreModule { }
