@@ -18,10 +18,14 @@ export class TasksComponent implements OnInit {
   constructor(
     private tasksService: TasksService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.tasks = this.tasksService.tasks;
+  }
+
+  deleteTask(task: ITask): void {
+    this.tasksService.deleteTask(task);
   }
 
   navToCreateTask(): void {
